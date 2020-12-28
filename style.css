@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
+
+:root {
+  --primary-color: #32cd32;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+h1,
+h2 {
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+p {
+  margin: 12px;
+  font-weight: bold;
+  word-spacing: 3px;
+}
+
+.logo1 img {
+  width: 50%;
+  height: auto;
+}
+
+.logo1 {
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  padding-top: 0px;
+  animation: slideInFromLeft 2s ease-in;
+}
+.logo {
+  padding: 70px;
+  font-size: 40px;
+  margin-top: 32px;
+  animation: FadeIn 3s;
+}
+
+.navbar {
+  background-color: #32cd32;
+  color: #fff;
+  height: 110px;
+  overflow: hidden;
+}
+
+.navbar ul {
+  display: flex;
+  animation: FadeIn 3s;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 10px;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  border-bottom: 2px #fff solid;
+}
+
+.navbar .flex {
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.introduction {
+  display: flex;
+  height: 500px;
+  background-color: var(--primary-color);
+  color: #fff;
+  position: relative;
+}
+
+.introduction h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 40px;
+  animation: FadeIn 3s;
+}
+.introduction p {
+  animation: slideInFromLeft 2s ease-in;
+}
+.introduction::before,
+.introduction::after {
+  content: "";
+  position: absolute;
+  height: 100px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  transform: skewY(-4deg);
+  -webkit-transform: skewY(-2deg);
+}
+
+.introduction-portrait {
+  overflow: hidden;
+  animation: FadeIn 3s;
+}
+.biography h1 {
+  color: #32cd32;
+  font-weight: 900;
+  font-size: 50px;
+  text-align: center;
+}
+.biography p {
+  color: grey;
+}
+.biography-womeninpowervid {
+  margin-top: 90px;
+  padding-left: 80px;
+  align-items: center;
+}
+
+/*Utitilities*/
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+.btn {
+  display: inline;
+  padding: 10px 30px;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+.btn-outline {
+  background-color: transparent;
+  border: 1px #fff solid;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.wave-container {
+  position: relative;
+  background: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+.footer-wave-container > svg {
+  display: block;
+}
+
+.footer-icons {
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+.footer-icons li {
+  display: inline-block;
+  list-style-type: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.footer-icons li a {
+  border-bottom: none;
+}
+.footer-icons li img {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+/*Animation*/
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*Tablets and under*/
+@media (max-width: 1280px) {
+  .nav {
+    height: 200px;
+  }
+  .navbar {
+    overflow: visible;
+    height: 300px;
+  }
+  .navbar .flex {
+    flex-direction: column;
+  }
+
+  .introduction {
+    height: 850px;
+    display: grid;
+  }
+  iframe {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
+/*Mobile*/
+@media (max-width: 812px) {
+  .logo {
+    font-size: 20px;
+  }
+  .nav {
+    height: 100px;
+  }
+  .navbar {
+    overflow: visible;
+    height: 300px;
+  }
+  .navbar .flex {
+    flex-direction: column;
+  }
+  .navbar ul {
+    padding: 4px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .introduction {
+    height: 1100px;
+    width: 100%;
+    display: grid;
+    margin-left: 0px;
+  }
+  .introduction .grid {
+    grid-template-columns: 1fr;
+  }
+  .introduction-portrait .grid {
+    margin-left: 0px;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1">
+
+
+        
+        <link rel="stylesheet" href="contactinfo.css">
+
+        <title>ACTION ANN || MORE ANN MORE ACTION</title>
+
+        
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="container flex">
+            <div class="logo1">
+                <img src="/images/actionlogo.png" alt="Action Ann-logo">
+                    
+            </div>
+                    <h1 class="logo">
+                    <b>ACTION ANN</b></h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="needsform.html">Needs Request</a></li>
+                        <li><a href="contactinfo.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <br>
+            </div>
+        </div>
+        <br>
+        <div class="wave-container">
+            <div class="upper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#32cd32" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
+                <div class="forms card">
+                    <h2>Needs Request</h2>
+                    <form name="submit-to-google-sheet">
+                        <div class="form-control">
+                            <input type="text" name="First Name"  placeholder="First Name" required>
+                        </div>
+                        <div class="form-control">
+                            <input type="text" name="Last Name"  placeholder="Last Name" required>
+                        </div>
+                        <div class="form-control">
+                            <input type="text" name="Phone number"  placeholder="Phone number" required>
+                        </div>
+                        <div class="form-control">
+                            <input type="text" name="Email"  placeholder="Email">
+                        </div>
+                        <div class="form-control">
+                            <input type="text" name="Tax Registration Number"  placeholder="Tax Registration Number" required>
+                        </div>
+                        <div class="form-control">
+                            <input id = "dob" name="Date"  type = "date"/>
+                        </div>
+                        <div class="form-control">
+                            <label>Gender</label><br>
+                            <input id = "male"  type = "radio" value = 'M' name = "Gender" required/> Male
+                            <br><input id = "female"  type = "radio" value = 'F' name = "Gender" required/> Female
+                        </div>
+                        <div class="form-control">
+                            <input type="text" name="Address"  placeholder="Address">
+                        </div>
+                        <div class="form-control">
+                            <h3>Type of Assistance</h3><br>
+                            <select id = "Category" name="Category" required>
+                                <option value = "Economic Enablement" > Economic Enablement </option>
+                                <option value = "Welfare"> Welfare </option>
+                                <option value = "Job"> Job </option>
+                                <option value = "Housing"> Housing </option>
+                                <option value = "Appointment"> Appointment </option>
+                                <option value = "Agriculture"> Agriculture </option>
+                                <option value = "Education"> Education </option>
+                                <option value = "Medical Assistance"> Medical Assistance </option>
+                            </select> 
+                        </div>   
+                        <br> 
+                        <div class="form-control">
+                            <textarea type="text" name="Comments" placeholder=>Comments 
+                            </textarea>
+                        </div>
+                        <div class="form-control">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#fff" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>    
+        </div>
+        
+    </body>
+    <script>
+        const scriptURL='https://script.google.com/macros/s/AKfycbx7lWFuv8JiWAykkwYJGzwWKKHYn-TEgLvdvNIh8xaoo_vjs-QJwPqzdQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert('Application Submitted. Await contact from one of our representatives. If you wish to make another application please refresh page.', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</html>
